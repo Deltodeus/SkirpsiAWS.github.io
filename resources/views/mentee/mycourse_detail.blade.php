@@ -86,7 +86,7 @@
                             <tr class="table-info">
                                 <th scope="row">{{$i}}</th>
                                 <td>
-                                    <a href="{{'/editModule/'.$module->id}}" style="text-decoration:none; color:black">
+                                    <a href="{{'/editModule/'.$module->id}}">
                                         {{$module->name}}
                                     </a>
                                 </td>
@@ -121,7 +121,7 @@
                             <tr class="table-info">
                                 <th scope="row">{{$i}}</th>
                                 <td>
-                                    <a href="{{'/editClass/'.$class->id}}" style="text-decoration:none; color:black">
+                                    <a href="{{'/editClass/'.$class->id}}" >
                                         {{$class->name}}
                                     </a>
                                 </td>
