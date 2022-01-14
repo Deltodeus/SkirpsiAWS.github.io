@@ -144,11 +144,11 @@
               </div>              
             @endif
           
-            <div class="container">
+            <div class="container" style="display: flex; justify-content: center">
               @foreach ($clockAdmin as $dataClock)
               <div class="row">
-                <div class="col-sm" style=" text-align:center" >
-                 <a href="{{$dataClock->url}}"><button type="button" class="btn btn-warning" style="width: auto; background-color:#E08C1F;border-color:#E08C1F; color:white;  border-radius: 30px;font-weight: bold">#1 Diskusi | {{$dataClock->start_time}} - {{$dataClock->end_time}} <h5>Admin: {{$dataClock->name}}</h5></button></a> 
+                <div class="col-sm" style=" text-align:center; margin-left: 25px" >
+                  <a href="{{$dataClock->url}}"><button type="button" class="btn btn-warning" style="width: auto; background-color:#E08C1F;border-color:#E08C1F; color:white;  border-radius: 30px;font-weight: bold">#1 Diskusi | {{$dataClock->start_time}} - {{$dataClock->end_time}} <h5>Admin: {{$dataClock->name}}</h5></button></a> 
                 </div>
               </div>
             
