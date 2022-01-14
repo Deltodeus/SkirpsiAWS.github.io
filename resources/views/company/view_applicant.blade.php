@@ -72,7 +72,9 @@
                     <div style="display: flex; margin-top: 10px; justify-content: center">
                         <form action="{{'/applicantList/approve/'.$item->applicantId}}" method="post">
                             {{csrf_field()}}
-                            <button class="btn btn-primary" style="width:95px">Accept</button>
+                            <button class="btn btn-primary" 
+                            onclick="return confirm('Are you sure you want to Accept This Applicant?')"
+                            style="width:95px">Accept</button>
                         </form>
                         <form action="{{'/applicantList/reject/'.$item->applicantId}}" method="post">
                             {{csrf_field()}}
