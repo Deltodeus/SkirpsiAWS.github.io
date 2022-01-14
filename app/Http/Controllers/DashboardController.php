@@ -97,8 +97,8 @@ class DashboardController extends Controller
                 ->join('courses','modules.course_id','=','courses.id')
                 ->join('classes','classes.course_id','=','courses.id')
                 ->join('submitted_assignments','submitted_assignments.assignment_id','=','assignments.id')
-                ->select('assignments.title','assignments.id',DB::raw('count(submitted_assignments.mentee_id) as totalPending'))
-                ->groupBy('assignments.title','assignments.id')
+                ->select('modules.id as moduleId','assignments.title','assignments.id',DB::raw('count(submitted_assignments.mentee_id) as totalPending'))
+                ->groupBy('assignments.title','assignments.id','modules.id')
                 ->where('courses.id','=',$key->id)
                 ->whereNull('submitted_assignments.score')
                 ->whereNotNull('submitted_assignments.file')->get();
@@ -144,7 +144,7 @@ class DashboardController extends Controller
             foreach ($assignmentMentee as $key) {
                 $assignment = DB::table('modules')
                 ->join('assignments','modules.id','=','assignments.module_id')
-                ->select('assignments.title','assignments.id',DB::raw('DATEDIFF(assignments.end_date,current_date) as dateDiff'))
+                ->select('modules.id as moduleId','assignments.title','assignments.id',DB::raw('DATEDIFF(assignments.end_date,current_date) as dateDiff'))
                 ->where('modules.course_id','=',$key->id)
                 ->whereRaw('DATEDIFF(assignments.end_date,current_date) > 0')
                 ->whereNotIn('assignments.id',function($query) use ($menteeId){

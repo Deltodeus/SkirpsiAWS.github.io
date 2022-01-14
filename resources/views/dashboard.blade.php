@@ -97,7 +97,7 @@
                     <h4 style="margin-left:2.5%;"><b>{{$course->name}}</b></h4>
                     @foreach ($course->assignment as $assignment)
                         <div style="margin-left:2.5%; display: flex">
-                            <h5 style="width: 90%; float: right;">{{$assignment->title}}</h5>
+                            <h5 style="width: 90%; float: right;"><a href="{{url('/moduleDetailAssignment/'.$assignment->moduleId)}}">{{$assignment->title}}</a></h5>
                             <h5 style="width: 10%; float: left;">{{$assignment->totalPending}}</h5>
                         </div>
                     @endforeach
