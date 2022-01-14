@@ -37,9 +37,11 @@
         @endif
         @foreach ($assignmentList as $assignment)
         <div style="display: flex">
-
-            <h4 style="margin-top:30px; margin-left:2.5%; width: 80%;float:left"><a style="color:black" href="{{'/assignmentDetail/'.$assignment->id}}">{{$assignment->title}}</a></h4>
-
+            @if($auth && \Illuminate\Support\Facades\Auth::user()->role == 'mentor')
+                <h4 style="margin-top:30px; margin-left:2.5%; width: 80%;float:left"><a style="color:black" href="{{'/assignmentDetail/'.$assignment->id}}">{{$assignment->title}}</a></h4>
+            @else
+                <h4 style="margin-top:30px; margin-left:2.5%; width: 80%;float:left">{{$assignment->title}}</h4>
+            @endif
                 <div style="width:20%; float: right; display: flex;">
                 @if($auth && \Illuminate\Support\Facades\Auth::user()->role != 'mentee')
                 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editAssignment-{{$assignment->id}}"
