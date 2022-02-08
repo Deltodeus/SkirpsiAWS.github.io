@@ -40,7 +40,7 @@
             <h4 style="margin-top:30px; margin-left:2.5%; width: 80%;float:left">{{$video->name}}</h4>
             <div style="width:20%; float: right; display: flex;">
                 @if($auth && \Illuminate\Support\Facades\Auth::user()->role != 'mentee')
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editVideo"
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editVideo-{{$video->id}}"
                     style="height: 40px; margin-top: 30px; background-color: #27353F">Edit</button>
                 <form action="{{'/deleteVideo/'.$video->id}}" method="post">
                     {{csrf_field()}}
@@ -51,7 +51,7 @@
                 </form>
                 @endif
 
-                <div class="modal fade" id="editVideo" tabindex="-1" aria-labelledby="popupmodel" aria-hidden="true">
+                <div class="modal fade" id="editVideo-{{$video->id}}" tabindex="-1" aria-labelledby="popupmodel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">

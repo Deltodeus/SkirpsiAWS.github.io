@@ -158,7 +158,7 @@ class CourseController extends Controller
         $courseDetail = Course::find($id);
         $exam = DB::table('exams')
                 ->select('exams.*')
-                ->where('exams.course_id','=',$id)->get();
+                ->where('exams.course_id','=',$id)->orderByDesc('exams.created_at')->get();
 
         $completedMenteeList = [];
         if($exam->count() !=0){

@@ -65,13 +65,14 @@
                     @else
                     @if($auth && \Illuminate\Support\Facades\Auth::user()->role == 'mentee')
 
-                    <form action="{{url('buyCourse/'.$userData[0]->id.'/'.$item->id)}}" method="post">
-                        {{csrf_field()}}
+                    
                         <a class="btn" style="width: 180px; margin-top: 5px; background-color:#EE8F1B"
-                            data-toggle="modal" data-target="#exampleModal">Buy Course</a>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            data-toggle="modal" data-target="#exampleModal-{{$item->id}}">Buy Course</a>
+                        <div class="modal fade" id="exampleModal-{{$item->id}}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
+                                <form action="{{url('buyCourse/'.$userData[0]->id.'/'.$item->id)}}" method="post">
+                                    {{csrf_field()}}
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel"><strong>Payment Method</strong>
