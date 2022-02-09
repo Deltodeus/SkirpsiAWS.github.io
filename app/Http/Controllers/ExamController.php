@@ -117,7 +117,7 @@ class ExamController extends Controller
         $submittedExam->file = $file_path;
         $submittedExam->save();
 
-        return redirect('/exam/'.$courseId)->with('status','Exam Submitted Successfully');
+        return redirect('/exam/'.$examId)->with('status','Exam Submitted Successfully');
     }
 
     public function getEssaiExamPage($examId){

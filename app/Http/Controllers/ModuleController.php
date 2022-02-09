@@ -43,7 +43,7 @@ class ModuleController extends Controller
             'course' => 'required',
             'description' => 'required|min:10',
             'kkm' => 'required|integer|min:2',
-            'file' => 'required|mimes:application/pdf,application/x-pdf,ppt,pptx'
+            'file' => 'required'
         ]);
         $module = new Module();
         $module->name = $request->name;
