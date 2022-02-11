@@ -68,7 +68,7 @@ class DashboardController extends Controller
             ->get();
             #mentorDashboard
             $classList = DB::table('classes')
-            ->join('class_details','classes.id','=','class_details.class_id')
+            ->leftJoin('class_details','classes.id','=','class_details.class_id')
             ->join('courses','classes.course_id','=','courses.id')
             ->select('classes.name as className','courses.name as courseName',DB::raw('count(class_details.mentee_id) as totalMentee'))
             ->groupBy('classes.name','courses.name')
@@ -88,7 +88,9 @@ class DashboardController extends Controller
             ->join('submitted_assignments','submitted_assignments.assignment_id','=','assignments.id')
             ->select('courses.name','courses.id')->distinct()
             ->whereNull('submitted_assignments.score')
-            ->whereNotNull('submitted_assignments.file')->get();
+            ->whereNotNull('submitted_assignments.file')
+            ->where('classes.mentor_id','=',$userData[0]->id)
+            ->get();
 
             $assignment = [];
             foreach ($pendingAssignment as $key) {

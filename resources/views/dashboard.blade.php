@@ -91,6 +91,11 @@
             <center>
                 <h4>Pending Assignment to Rated</h4>
             </center>
+            @if($pendingAssignment->count() == 0)
+            <div class="col-md-12" style="background-color: #99eeff; border-radius: 10px; height: 200px; text-align: center">
+                <h4 style="padding-top: 70px">There is No Assignment to Rated Yet</h4>
+            </div>
+            @else
             <div class="col-md-12" style="background-color: #99eeff; border-radius: 10px;">
                 @foreach ($pendingAssignment as $course)
                 <div style="margin-top: 10px">
@@ -102,9 +107,10 @@
                         </div>
                     @endforeach
                     <hr style="border-top: 1px solid;margin-left:1.5%;width:95%">
-                </div>                    
+                </div>   
                 @endforeach
             </div>
+            @endif
         </div>
     </div>
     @elseif ($auth && \Illuminate\Support\Facades\Auth::user()->role == 'mentee')

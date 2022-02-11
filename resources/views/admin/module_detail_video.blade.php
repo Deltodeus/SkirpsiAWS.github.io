@@ -87,8 +87,8 @@
                                             class="upload bg-dark" for="video">
                                             <i class="fa fa-cloud-upload"></i>
                                             Upload</label><br>
-                                        <p style="font-size: 1px"> </p>
                                     </div>
+                                    <p style="color:red">*Only Accept .mp4 , .mov , or .ogg Extension*</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -188,8 +188,8 @@
                                     class="upload bg-dark" for="video_file">
                                     <i class="fa fa-cloud-upload"></i>
                                     Upload</label><br>
-                                <p style="font-size: 1px"> </p>
                             </div>
+                            <p style="color:red">*Only Accept .mp4 , .mov , or .ogg Extension*</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

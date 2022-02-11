@@ -119,7 +119,7 @@
         overflow: hidden;
         -webkit-line-clamp: 4;
         height: 100px;
-        display: -webkit-box;
+        /* display: -webkit-box; */
         max-width: 200;
         text-overflow: ellipsis;
     }

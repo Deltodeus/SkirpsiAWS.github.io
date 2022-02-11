@@ -50,16 +50,16 @@
                         <p class="cardText" style="overflow: hidden">{{$item->description}}</p>
                     </div>
                     @if($auth && \Illuminate\Support\Facades\Auth::user()->role == 'admin')
-                    <div style="display: flex">
+                    <div style="display: flex; justify-content: center;">
                         <a href="{{'/editCourse/'.$item->id}}">
-                            <button class="btn btn-primary" style="margin-left: 30px; margin-top: 20px">Edit</button>
+                            <button class="btn btn-primary" style="margin-top: 20px">Edit</button>
                         </a>
                         <form action="{{'/editCourse/delete/'.$item->id}}" method="post">
                             {{csrf_field()}}
                             {{method_field('post')}}
                             <button class="btn btn-danger"
                                 onclick="return confirm('Are you sure to Delete this Course?')"
-                                style="margin-left: 30px;margin-top: 20px">Delete</button>
+                                style="margin-left: 15px;margin-top: 20px">Delete</button>
                         </form>
                     </div>
                     @else

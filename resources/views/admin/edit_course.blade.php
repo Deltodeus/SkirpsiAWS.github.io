@@ -585,8 +585,8 @@
                                 class="upload bg-dark" for="video">
                                 <i class="fa fa-cloud-upload"></i>
                                 Upload</label><br>
-                            <p style="font-size: 1px"> </p>
                         </div>
+                        <p style="color: red">*For Essai , Only Accept .xls or .xlsx Extension*</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -612,6 +612,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Score</th>
                                 <th scope="col">File</th>
+                                <th scope="col">Feedback</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -631,10 +632,14 @@
                                         </button>
                                     </a>
                                 </td>
+                                <form action="{{url('/rateExam/'.$mentee->id)}}" method="post">
+                                {{csrf_field()}}
+
+                                <td>
+                                    <textarea name="feedback" cols="50" rows="2">{{$mentee->feedback}}</textarea>                                    
+                                </td>
                                 <td>
                                     @if($mentee->score == null)
-                                    <form action="{{url('/rateExam/'.$mentee->id)}}" method="post">
-                                        {{csrf_field()}}
                                         <div style="display: flex; justify-content: center">
                                             <input style="width:20%" type="number" name="score" class="form-control"
                                                 style="margin-bottom: 5px">

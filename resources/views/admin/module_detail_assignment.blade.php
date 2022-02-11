@@ -142,8 +142,8 @@
                                             <i class="fa fa-cloud-upload"></i>
                                             Upload</label> --}}
                                             <br>
-                                        <p style="font-size: 1px"> </p>
                                     </div>
+                                    <p style="color: red">*Only Accept .doc , .ppt , .docx , or .pptx Extension*</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -203,8 +203,8 @@
                                     class="upload bg-dark" for="assignment_file">
                                     <i class="fa fa-cloud-upload"></i>
                                     Upload</label><br>
-                                <p style="font-size: 1px"> </p>
                             </div>
+                            <p style="color: red">*Only Accept .doc , .ppt , .docx , or .pptx Extension*</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
