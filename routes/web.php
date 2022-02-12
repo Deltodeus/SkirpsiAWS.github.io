@@ -154,7 +154,7 @@ Route::group(['middleware' => 'mentorAuth'], function () {
 Route::group(['middleware' => 'loginAuth'], function () {
     Route::get('/applyCompany','ApplyCompanyController@show');
     Route::get('/applyCompany/search/','ApplyCompanyController@showBySearch');
-    Route::get('/applyCompany/{jobId}','ApplyCompanyController@applyCompany');
+    Route::post('/applyCompany/{jobId}','ApplyCompanyController@applyCompany');
     Route::get('/applyCompany/detail/{jobId}','ApplyCompanyController@getDetailCompanyJob');
     Route::get('/courseList','CourseController@getCourseListForMentee');
     Route::post('/buyCourse/{menteeId}/{courseId}','CourseController@buyCourse');
