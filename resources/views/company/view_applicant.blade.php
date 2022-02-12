@@ -35,7 +35,7 @@
 
         <div style="display: flex; margin-top :20px">
             @foreach ($applicantList as $item)
-            <div class="col-md-2 card3">
+            <div class="col-md-2 card3" style="height:auto; padding-bottom:10px;">
                 <div style="margin-top: 20px">
                     <div>
                         @if ($item->profile_picture == null)
